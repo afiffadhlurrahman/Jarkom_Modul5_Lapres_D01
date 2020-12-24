@@ -5,6 +5,12 @@ Nama Anggota :
 - 05111840000093 Muhammad Afif Fadhlurrahman
 - 05111740000091 Affan Ahsanul Habib
 
+Soal :
+- [A](#a)
+- [B](#b)
+- [C](#c)
+- [D](#d)
+
 ### A 
 Tugas pertama kalian yaitu membuat topologi jaringan sesuai dengan rancangan yang diberikan Bibah seperti dibawah ini :
 
