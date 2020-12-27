@@ -288,6 +288,14 @@ Jawab :
 iptables -t nat -A POSTROUTING -s 192.168.0.0/21 -o eth0 -j SNAT --to-source 10.151.78.10
 ```
 
+Testing :
+
+![menjalankan](img/1-1.png)
+
+![melihat daftar iptables](img/1-2.png)
+
+![hasil](img/1-3.png)
+
 ### 2
 Kalian diminta untuk mendrop semua akses SSH dari luar Topologi (UML) Kalian pada server
 yang memiliki ip DMZ (DHCP dan DNS SERVER) pada SURABAYA demi menjaga keamanan.
@@ -297,6 +305,14 @@ Jawab :
 ```
 iptables -A FORWARD -p tcp --dport 22 -d 10.151.79.16/29 -i eth0 -j DROP
 ```
+
+Testing :
+
+![menjalankan](img/2-1.png)
+
+![nc di malang](img/2-2.png)
+
+![nc dr putty ke malang](img/3-3.png)
 
 ### 3
 Karena tim kalian maksimal terdiri dari 3 orang, Bibah meminta kalian untuk membatasi DHCP
@@ -308,6 +324,12 @@ Jawab :
 ```
 iptables  -A INPUT -p icmp  -m connlimit --connlimit-above 3 --connlimit-mask 0 -j DROP
 ```
+
+Testing :
+
+![menjalankan](img/3-1.png)
+
+![hasil](img/3-2.png)
 
 Kemudian kalian diminta untuk membatasi akses ke MALANG yang berasal dari SUBNET
 SIDOARJO dan SUBNET GRESIK dengan peraturan sebagai berikut:
@@ -323,6 +345,8 @@ iptables -A INPUT -s 192.168.4.0/24 -m time --timestart 07:00 --timestop 17:00 -
 iptables -A INPUT -s 192.168.4.0/24 -m time --timestart 17:01 --timestop 06:59 -j REJECT
 ```
 
+Testing :
+
 ### 5
 Akses dari subnet GRESIK hanya diperbolehkan pada pukul 17.00 hingga pukul 07.00 setiap
 harinya.
@@ -334,6 +358,12 @@ Jawab :
 ```
 iptables -A INPUT -s 192.168.0.0/24 -m time --timestart 07:01 --timestop 16:59 -j REJECT
 ```
+
+Testing :
+
+![menjalankan](img/5-1.png)
+
+![hasil](img/5-2.png)
 
 ### 6
 Bibah ingin SURABAYA disetting sehingga setiap
@@ -347,6 +377,8 @@ iptables -A PREROUTING -t nat -p tcp -d 192.168.1.1 --dport 80 -j DNAT --to-dest
 iptables -A PREROUTING -t nat -p tcp -d 192.168.1.1 --dport 80 -j DNAT --to-destination 192.168.1.3:80
 ```
 
+Testing :
+
 ### 7
 Bibah ingin agar semua paket didrop oleh firewall (dalam topologi) tercatat dalam log pada setiap
 UML yang memiliki aturan drop.
@@ -357,3 +389,9 @@ Jawab :
 iptables -A FORWARD -p tcp --dport 22 -d 10.151.79.16/29 -i eth0 -j LOG --log-prefix "INPUT:DROP:" --log-level 6
 iptables  -A INPUT -p icmp  -m connlimit --connlimit-above 3 --connlimit-mask 0 -j LOG --log-prefix "INPUT:DROP:" --log-level 6
 ```
+
+Testing :
+
+![hasil no 2](img/2-1.png)
+
+![hasil no 3](img/3-1.png)
