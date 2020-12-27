@@ -38,30 +38,8 @@ Keterangan :
   - Jumlah host pada subnet SIDOARJO 200 Host
   - Jumlah host pada subnet GRESIK 210 Host
  ``` 
-### B
-Karena kalian telah mempelajari Subnetting dan Routing, Bibah meminta kalian untuk membuat topologi tersebut menggunakan teknik CIDR atau VLSM. Setelah melakukan subnetting.
-
-Jawab :
-
-**Pada praktikum kali ini, kami menggunakan perhitungan CIDR.**
-
-1. Pembagian Subnet 
-
-![pembagian subnet](img/pembagiaan.png)
-
-2. Perhitungan tree CIDR
-
-![perhitungan tree](img/tree.png)
-
-![subnet](img/subnet1.png)
-
-3. Hasil subnet setelah dihitung 
-
-![hasil subnet](img/subnet.png)
-
-4. UML
-
-- Topo
+ 
+ - Topologi
 
 ```
 # Switch
@@ -88,6 +66,30 @@ xterm -T SIDOARJO -e linux ubd0=SIDOARJO,jarkom umid=SIDOARJO eth0=daemon,,,swit
 xterm -T GRESIK -e linux ubd0=GRESIK,jarkom umid=GRESIK eth0=daemon,,,switch6 mem=96M &
 
 ```
+
+
+### B
+Karena kalian telah mempelajari Subnetting dan Routing, Bibah meminta kalian untuk membuat topologi tersebut menggunakan teknik CIDR atau VLSM. Setelah melakukan subnetting.
+
+Jawab :
+
+**Pada praktikum kali ini, kami menggunakan perhitungan CIDR.**
+
+1. Pembagian Subnet 
+
+![pembagian subnet](img/pembagiaan.png)
+
+2. Perhitungan tree CIDR
+
+![perhitungan tree](img/tree.png)
+
+![subnet](img/subnet1.png)
+
+3. Hasil subnet setelah dihitung 
+
+![hasil subnet](img/subnet.png)
+
+4. UML
 
 - Interface
 
