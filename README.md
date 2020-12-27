@@ -213,6 +213,65 @@ seperti yang kalian telah pelajari di masa lalu.
 
 Jawab :
 
+**Pada UML MOJOKERTO** 
+
+1. Install **isc-dhcp-server** dengan perintah `apt-get install isc-dhcp-server`. 
+
+2. Kemudian jalankan perintah `nano /etc/dhcp/dhcpd.conf`, edit rules menjadi sebagai berikut: 
+
+```
+subnet 10.151.79.16 netmask 255.255.255.248 {   #adalah subnet network server dan router# 
+  range 10.151.79.18 10.151.79.20;
+  option routers 10.151.79.17;
+  option domain-name-servers 10.151.79.18, 202.46.129.2;
+}
+
+# SIDOARJO
+subnet 192.168.4.0 netmask 255.255.255.0 {
+  range 192.168.4.2 192.168.4.255;
+  option routers 192.168.4.1;
+  option domain-name-servers 10.151.79.18, 202.46.129.2;
+}
+
+# GRESIK
+subnet 192.168.0.0 netmask 255.255.255.0 {
+  range 192.168.0.2 192.168.0.255;
+  option routers 192.168.0.1;
+  option domain-name-servers 10.151.79.18, 202.46.129.2;
+}
+```
+
+3. Save kemudian restart dengan perintah `service isc-dhcp-server restart`. 
+
+**Pada Tiap Router** 
+
+1. Install **isc-dhcp-relay** dengan perintah `apt-get install isc-dhcp-relay`. 
+
+2. Kemudian jalankan perintah `nano /etc/default/isc-dhcp-relay`, edit menjadi sebagai berikut: 
+
+```
+SERVERS="10.151.79.19"
+```
+```
+INTERFACES="eth1 eth2 eth3"
+```
+
+3. Save kemudian restart dengan perintah `service isc-dhcp-relay restart`. 
+
+**Pada Setiap Client** 
+
+1. Ketik `nano /etc/network/interfaces` 
+
+2. Hapus/Comment pada konfigursasi IP statis. Tambahkan 
+
+```
+auto eth0
+iface eth0 inet dhcp
+```
+
+3. Kemudian restart dengan `service networking restart` 
+
+4. Testing 
 
 # Memasukkan IPTABLES
 
