@@ -312,7 +312,7 @@ Testing :
 
 ![nc di malang](img/2-2.png)
 
-![nc dr putty ke malang](img/3-3.png)
+![nc dr putty ke malang](img/2-3.png)
 
 ### 3
 Karena tim kalian maksimal terdiri dari 3 orang, Bibah meminta kalian untuk membatasi DHCP
