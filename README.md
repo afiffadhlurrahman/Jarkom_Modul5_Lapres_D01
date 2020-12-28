@@ -383,7 +383,7 @@ iptables -A PREROUTING -t nat -p tcp -d 192.168.1.1 --dport 80 -j DNAT --to-dest
 
 Testing :
 
-![soal 6 testing](img/test6.png)
+![soal 6 testing](img/test6.PNG)
 
 ### 7
 Bibah ingin agar semua paket didrop oleh firewall (dalam topologi) tercatat dalam log pada setiap
