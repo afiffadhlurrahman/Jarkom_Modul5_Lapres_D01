@@ -275,6 +275,16 @@ iface eth0 inet dhcp
 
 4. Testing 
 
+- SIDOARJO
+
+![dhcp sidoarjo](img/sido_test_dhcp.png)
+
+- GRESIK
+
+![dhcp gresik](img/gresik_test_dhcp.png)
+
+- ifconfig SIDOARJO dan GRESIK
+
 ![dhcp testing](img/dhcp_test.png)
 
 # Memasukkan IPTABLES
