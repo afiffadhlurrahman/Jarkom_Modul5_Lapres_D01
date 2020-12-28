@@ -275,6 +275,8 @@ iface eth0 inet dhcp
 
 4. Testing 
 
+![dhcp testing](img/dhcp_test.png)
+
 # Memasukkan IPTABLES
 
 ### 1
@@ -347,6 +349,8 @@ iptables -A INPUT -s 192.168.4.0/24 -m time --timestart 17:01 --timestop 06:59 -
 
 Testing :
 
+![soal 4 testing](img/test4.png)
+
 ### 5
 Akses dari subnet GRESIK hanya diperbolehkan pada pukul 17.00 hingga pukul 07.00 setiap
 harinya.
@@ -378,6 +382,8 @@ iptables -A PREROUTING -t nat -p tcp -d 192.168.1.1 --dport 80 -j DNAT --to-dest
 ```
 
 Testing :
+
+![soal 6 testing](img/test6.png)
 
 ### 7
 Bibah ingin agar semua paket didrop oleh firewall (dalam topologi) tercatat dalam log pada setiap
